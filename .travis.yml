@@ -39,7 +39,7 @@ script:
     #sudo apt-get install -qqy --no-install-recommends openjdk-8-jdk-headless
     cd /home/cmbuild/twrp/
     source build/envsetup.sh
-    lunch lunch omni_apollo_lite-eng
+    lunch lunch omni_apollo_lite-userdebug
     mka recoveryimage 1>/dev/null
     exit
     EOF
