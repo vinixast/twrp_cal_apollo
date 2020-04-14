@@ -2,7 +2,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
 # Replace $$DEVICE$$ with your Device Name's Value.
 # Replace $$BRAND$$ with your Brand's / Manufacturer's Value.
-PRODUCT_COPY_FILES += device/$$BRAND$$/$$DEVICE$$/prebuilt/zImage:kernel
+PRODUCT_COPY_FILES += device/vernee/apollo_lite/prebuilt/zImage:kernel
 
 PRODUCT_DEVICE := apollo_lite
 PRODUCT_NAME := omni_apollo_lite
