@@ -1,0 +1,10 @@
+ro.build.product=k15tb_a                     # Company Given Codename for the Device.
+ro.product.board=full_k15tb_a                               # The Board Name for Build.
+ro.product.brand=vernee                              # The Brand and The Manufacturer
+ro.product.manufacturer=vernee                             # can be of the Same Name.
+ro.product.name=full_k15tb_a                                # The Device Name and/or The Codename
+ro.product.device=apollo_lite                               # we will be using.
+ro.product.model=k15tb_a                              # A Nickname, we will ignore it.
+ro.mediatek.platform=MT6797                              # The Chipset Platform of the Project.
+ro.mediatek.project.path=device/nb/k15tb_a  # The Original Build Location from Company.
+ro.product.cpu.abi=arm64-v8a                              # Shows if the device is 6-bit or 32-bit.
