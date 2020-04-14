@@ -44,29 +44,17 @@ BOARD_SUPPRESS_EMMC_WIPE := true
 BOARD_CHARGER_SHOW_PERCENTAGE := true
 
 # TWRP stuff
-TW_EXCLUDE_SUPERSU := true                     # true/false: Add SuperSU or not
-TW_INCLUDE_CRYPTO := true                      # true/false: Add Data Encryption Support or not
-TW_INPUT_BLACKLIST := "hbtp_vm"
-TW_SCREEN_BLANK_ON_BOOT := true
-DEVICE_RESOLUTION := 1080x1920                  # The Resolution of your Device
-TARGET_SCREEN_HEIGHT := 1080                     # The height
-TARGET_SCREEN_WIDTH := 1920                       # The width
-TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
-# Set the Brightness Control File Path below
-TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
-TW_SECONDARY_BRIGHTNESS_PATH := /sys/devices/platform/leds-mt65xx/leds/lcd-backlight/brightness
-# Set the Path of Logical Units (LUNs) for Storage below
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/mt_usb/musb-hdrc.0.auto/gadget/lun%d/file
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun/file
-TW_MAX_BRIGHTNESS := 255
-TW_DEFAULT_BRIGHTNESS := 80                   # Set custom brightness, low is better
+DEVICE_RESOLUTION := 1080x1920
+DEVICE_SCREEN_WIDTH := 1080
+DEVICE_SCREEN_HEIGHT := 1920
+RECOVERY_SDCARD_ON_DATA := true
+TW_INTERNAL_STORAGE_PATH := "/data/media"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+TW_EXTERNAL_STORAGE_PATH := "/external_sd"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
+TW_DEFAULT_EXTERNAL_STORAGE := true
 
-TW_INCLUDE_NTFS_3G := true                    # Include NTFS Filesystem Support
-TW_INCLUDE_FUSE_EXFAT := true                 # Include Fuse-ExFAT Filesystem Support
-TWRP_INCLUDE_LOGCAT := true                   # Include LogCat Binary
-TW_INCLUDE_FB2PNG := true                     # Include Screenshot Support
-TW_DEFAULT_LANGUAGE := en                     # Set Default Language 
-TW_EXTRA_LANGUAGES := false
+
 
 # Kernel
 TARGET_IS_64_BIT := true                      # true/false: Determine if the device is 64-bit or not
