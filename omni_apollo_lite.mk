@@ -20,4 +20,4 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/ueventd.goldfish.rc:root/ueventd.goldfish.rc \
     $(LOCAL_PATH)/recovery/root/ueventd.ranchu.rc:root/ueventd.ranchu.rc \
     $(LOCAL_PATH)/recovery/root/ueventd.rc:root/ueventd.rc \
-    $(LOCAL_PATH)/recovery/root/ueventd.mt6735.rc:root/ueventd.mt6735.rc
+    $(LOCAL_PATH)/recovery/root/ueventd.mt6735.rc:root/ueventd.mt6797.rc
