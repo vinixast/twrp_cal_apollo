@@ -44,7 +44,9 @@ BOARD_SUPPRESS_EMMC_WIPE := true
 BOARD_CHARGER_SHOW_PERCENTAGE := true
 
 # TWRP stuff
-TW_THEME := portrait_hdpi
+DEVICE_RESOLUTION := 1080x1920                  # The Resolution of your Device
+TARGET_SCREEN_HEIGHT := 1920                     # The height
+TARGET_SCREEN_WIDTH := 1080  
 TW_EXCLUDE_SUPERSU := true
 TW_INCLUDE_CRYPTO := true
 TW_CRYPTO_FS_TYPE := "ext4"
