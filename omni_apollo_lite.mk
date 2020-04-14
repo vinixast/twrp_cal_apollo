@@ -14,10 +14,10 @@ PRODUCT_MANUFACTURER := vernee
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/etc/recovery.fstab:root/etc/recovery.fstab \
     $(LOCAL_PATH)/recovery/root/sbin/permissive.sh:root/sbin/permissive.sh \
-    $(LOCAL_PATH)/recovery/root/init.rc:root/init.rc \
-    $(LOCAL_PATH)/recovery/root/init.recovery.service.rc:root/init.recovery.service.rc \
-    $(LOCAL_PATH)/recovery/root/init.recovery.usb.rc:root/init.recovery.usb.rc \
-    $(LOCAL_PATH)/recovery/root/ueventd.goldfish.rc:root/ueventd.goldfish.rc \
-    $(LOCAL_PATH)/recovery/root/ueventd.ranchu.rc:root/ueventd.ranchu.rc \
-    $(LOCAL_PATH)/recovery/root/ueventd.rc:root/ueventd.rc \
+    $(LOCAL_PATH)/recovery/root/factory_init.project.rc:root/factory_init.project.rc \
+    $(LOCAL_PATH)/recovery/root/factory_init.rc:root/factory_init.rc \
+    $(LOCAL_PATH)/recovery/root/init.recovery.mt6797.rc:root/init.recovery.mt6797.rc \
+    $(LOCAL_PATH)/recovery/root/meta_init.modem.rc:root/meta_init.modem.rc \
+    $(LOCAL_PATH)/recovery/root/meta_init.project.rc:root/meta_init.project.rc \
+    $(LOCAL_PATH)/recovery/root/meta_init.rc:root/meta_init.rcc \
     $(LOCAL_PATH)/recovery/root/ueventd.mt6797.rc:root/ueventd.mt6797.rc
