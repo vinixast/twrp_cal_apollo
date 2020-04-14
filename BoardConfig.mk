@@ -70,8 +70,8 @@ TARGET_BOARD_SUFFIX := _64                    # Remove if the device is 32-bit
 TARGET_USES_64_BIT_BINDER := true             # Remove if the device is 32-bit
 
 # Check whether the device is 64-bit or 32-bit, and then include the TWRPBuilder Part
-#ifeq ($(TARGET_IS_64_BIT),true)
-#include device/generic/twrpbuilder/BoardConfig64.mk   # If the device Is 64-bit, it'll be used
-#else
-#include device/generic/twrpbuilder/BoardConfig32.mk   # If the device Is 32-bit, it'll be used
+ifeq ($(TARGET_IS_64_BIT),true)
+include device/generic/twrpbuilder/BoardConfig64.mk   # If the device Is 64-bit, it'll be used
+else
+include device/generic/twrpbuilder/BoardConfig32.mk   # If the device Is 32-bit, it'll be used
 #endif
