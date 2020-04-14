@@ -19,7 +19,6 @@ before_script:
   - wget -q https://github.com/PhantomZone54/twrp_sources_norepo/releases/download/v3.2.3-20180830/MinimalOmniRecovery-twrp-6.0-norepo-20180830.tar.xz
     -O $HOME/twrp.tar.xz
   - tar -xJf twrp.tar.xz --directory $HOME/twrp/ && rm twrp.tar.xz
-  - unzip busybox.zip -d $HOME/twrp/external && rm busybox.zip
 script:
   # Replace your $$USERNAME$$, $$REPO_URL$$, $$BRAND$$, $$DEVICE$$
   - cd $HOME/twrp/ && git clone https://github.com/vinixast/twrp_device_apollo_x.git device/vernee/apollo_lite
