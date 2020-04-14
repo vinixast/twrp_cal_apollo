@@ -1,4 +1,4 @@
-LOCAL_PATH := device/$$BRAND$$/$$DEVICE$$
+LOCAL_PATH := device/vernee/apollo_lite
 
 TARGET_BOARD_PLATFORM := mt6797               # From ro.mediatek.platform, but lowercase value
 TARGET_NO_BOOTLOADER := true
