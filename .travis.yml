@@ -50,12 +50,11 @@ after_success:
   - export version=$(cat bootable/recovery/variables.h | grep "define TW_MAIN_VERSION_STR" | cut -d '"' -f2)
   - cp $HOME/twrp/out/target/product/apollo_lite/recovery.img $HOME/twrp/TWRP-3.3.1-apollo_lite-$(date +"%Y%m%d")-Unofficial.img
   - cd $HOME/twrp/
-  - travis setup heroku --force
 deploy:
-  skip_cleanup: true
+  cleanup: true
   provider: releases
   # The api_key will be loaded from the environment variables
-  api_key: e8b4a4c903239b12beb2cf84607df936351977d1 
+  github_token: e8b4a4c903239b12beb2cf84607df936351977d1 
   file_glob: true
   file: $HOME/twrp/*.img
   on:
