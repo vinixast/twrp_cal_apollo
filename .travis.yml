@@ -47,6 +47,7 @@ after_success:
   - export version=$(cat bootable/recovery/variables.h | grep "define TW_MAIN_VERSION_STR" | cut -d '"' -f2)
   - cp $HOME/twrp/out/target/product/apollo_lite/recovery.img $HOME/twrp/TWRP-3.3.1-apollo_lite-$(date +"%Y%m%d")-Unofficial.img
   - cd $HOME/twrp/
+  - travis setup heroku --force
 deploy:
   skip_cleanup: true
   provider: releases
