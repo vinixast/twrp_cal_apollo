@@ -55,6 +55,7 @@ after_success:
   - cd $HOME/twrp/
   - wput TWRP-$version-apollo_lite-$nowTime-Unofficial.img ftp://"$FTPUser":"$FTPPass"@"$FTPHost"//TWBuild-$version-$nowTime/
   - wput extra-system-files-$nowTime.tar.xz ftp://"$FTPUser":"$FTPPass"@"$FTPHost"//TWBuild-$version-$nowTime/
+  - cd $HOME/twrp/device/vernee/apollo_lite
 deploy:
   cleanup: true
   provider: releases
