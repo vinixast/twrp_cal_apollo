@@ -44,18 +44,34 @@ BOARD_SUPPRESS_EMMC_WIPE := true
 BOARD_CHARGER_SHOW_PERCENTAGE := true
 
 # TWRP stuff
-TW_THEME := portrait_hdpi 
-#DEVICE_RESOLUTION := 1080x1920
-#TARGET_SCREEN_WIDTH := 1080
-#TARGET_SCREEN_HEIGHT := 1920
-#RECOVERY_SDCARD_ON_DATA := true
-TW_INTERNAL_STORAGE_PATH := "/data/media"
-TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
-TW_EXTERNAL_STORAGE_PATH := "/external_sd"
-TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
-TW_DEFAULT_EXTERNAL_STORAGE := true
+DEVICE_RESOLUTION := 1080x1920                  # The Resolution of your Device
+TARGET_SCREEN_HEIGHT := 1920                     # The height
+TARGET_SCREEN_WIDTH := 1080  
+TW_EXCLUDE_SUPERSU := true
+TW_INCLUDE_CRYPTO := true
+TW_CRYPTO_FS_TYPE := "ext4"
+TW_CRYPTO_REAL_BLKDEV := "/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/userdata"
+TW_CRYPTO_MNT_POINT := "/data"
+TW_CRYPTO_FS_OPTIONS := "nosuid,nodev,noatime,discard,noauto_da_alloc,data=ordered"
+TW_INPUT_BLACKLIST := "hbtp_vm"
+TW_SCREEN_BLANK_ON_BOOT := true
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
+TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
+TW_SECONDARY_BRIGHTNESS_PATH := /sys/devices/platform/leds-mt65xx/leds/lcd-backlight/brightness
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/mt_usb/musb-hdrc.0.auto/gadget/lun%d/file
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun/file
+TW_MAX_BRIGHTNESS := 255
+TW_DEFAULT_BRIGHTNESS := 80
 
+TW_INCLUDE_NTFS_3G := true
+TW_INCLUDE_FUSE_EXFAT := true
+TWRP_INCLUDE_LOGCAT := true
+TW_INCLUDE_FB2PNG := true
+TW_DEFAULT_LANGUAGE := en
+TW_EXTRA_LANGUAGES := false
 
+RECOVERY_SDCARD_ON_DATA := true
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
 
 # Kernel
 TARGET_IS_64_BIT := true                      # true/false: Determine if the device is 64-bit or not
@@ -70,8 +86,8 @@ TARGET_BOARD_SUFFIX := _64                    # Remove if the device is 32-bit
 TARGET_USES_64_BIT_BINDER := true             # Remove if the device is 32-bit
 
 # Check whether the device is 64-bit or 32-bit, and then include the TWRPBuilder Part
-ifeq ($(TARGET_IS_64_BIT),true)
-include device/generic/twrpbuilder/BoardConfig64.mk   # If the device Is 64-bit, it'll be used
-else
-include device/generic/twrpbuilder/BoardConfig32.mk   # If the device Is 32-bit, it'll be used
+#ifeq ($(TARGET_IS_64_BIT),true)
+#include device/generic/twrpbuilder/BoardConfig64.mk   # If the device Is 64-bit, it'll be used
+#else
+#include device/generic/twrpbuilder/BoardConfig32.mk   # If the device Is 32-bit, it'll be used
 #endif
