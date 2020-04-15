@@ -45,13 +45,8 @@ script:
     EOF
 after_success:
   - export version=$(cat bootable/recovery/variables.h | grep "define TW_MAIN_VERSION_STR" | cut -d '"' -f2)
-  - export nowTime=$(date +%Y%m%d-%H%M)
-  - cp $HOME/twrp/out/target/product/apollo_lite/recovery.img $HOME/twrp/TWRP-$version-apollo_lite-$nowTime-Unofficial.img
-  - cd $HOME/twrp/out/target/product/apollo_lite/system/
-  - tar -I pxz -cf $HOME/twrp/extra-system-files-$nowTime.tar.xz *
+  - cp $HOME/twrp/out/target/product/apollo_lite/recovery.img $HOME/twrp/TWRP-3.3.1-apollo_lite-$(date +"%Y%m%d")-Unofficial.img
   - cd $HOME/twrp/
-  - wput TWRP-$version-apollo_lite-$nowTime-Unofficial.img ftp://"$FTPUser":"$FTPPass"@"$FTPHost"//TWBuild-$version-$nowTime/
-  - wput extra-system-files-$nowTime.tar.xz ftp://"$FTPUser":"$FTPPass"@"$FTPHost"//TWBuild-$version-$nowTime/
 deploy:
   skip_cleanup: true
   provider: releases
