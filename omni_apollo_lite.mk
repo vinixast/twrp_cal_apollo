@@ -20,12 +20,6 @@ PRODUCT_MANUFACTURER := vernee
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
     
-# Add fingerprint from Stock ROM build.prop
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    # These lines are from my device. You MUST Replace yours.
-    BUILD_FINGERPRINT="vernee/apollo_lite/k15tb_a:6.0/MRA58K/1493198123:user/test-keys" \
-    PRIVATE_BUILD_DESC="full_k15tb_a-user 6.0 MRA58K 1493198123 test-keys"
-
 # Ramdisk
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/etc/recovery.fstab:root/etc/recovery.fstab \
