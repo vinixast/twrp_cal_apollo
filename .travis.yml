@@ -34,16 +34,16 @@ script:
     source build/envsetup.sh
     # Choose build flavor as "eng" or "userdebug"
     BUILD_FLAVOR="eng"
-    lunch omni_apollo_lite-eng
+    lunch omni_apollo_x-eng
     make -j$(nproc --all) recoveryimage
     exit
     EOF
 after_success:
   - export version=$(cat bootable/recovery/variables.h | grep "define TW_MAIN_VERSION_STR" | cut -d '"' -f2)
-  - cp $HOME/twrp/out/target/product/apollo_lite/recovery.img $HOME/twrp/TWRP-$version-apollo_lite-$(date +"%Y%m%d")-Unofficial-version-4.img
+  - cp $HOME/twrp/out/target/product/apollo_x/recovery.img $HOME/twrp/TWRP-$version-apollo_x-$(date +"%Y%m%d")-Unofficial-version-4.img
   - cd $HOME/twrp/
   # Optional: You might need to switch from https://transfer.sh to https://file.io
-  - curl -s --upload-file TWRP-$version-apollo_lite-$(date +"%Y%m%d")-Unofficial-version-4.img https://transfer.sh/ && echo ""
+  - curl -s --upload-file TWRP-$version-apollo_x-$(date +"%Y%m%d")-Unofficial-version-4.img https://transfer.sh/ && echo ""
 deploy:
   skip_cleanup: true
   provider: releases
