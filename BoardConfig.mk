@@ -79,7 +79,7 @@ RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TARGET_IS_64_BIT := true
 TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/zImage
 TARGET_PREBUILT_RECOVERY_KERNEL := $(LOCAL_PATH)/prebuilt/zImage
-BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
+BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x40078000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --base 0x40078000 --pagesize 2048 --kernel_offset 0x00008000 --ramdisk_offset 0x04f88000 --second_offset 0x40f78000 --tags_offset 0x03f88000 --board K15TB-A.A.vR15.     
