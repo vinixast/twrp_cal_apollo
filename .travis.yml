@@ -39,10 +39,10 @@ script:
     EOF
 after_success:
   - export version=$(cat bootable/recovery/variables.h | grep "define TW_MAIN_VERSION_STR" | cut -d '"' -f2)
-  - cp $HOME/twrp/out/target/product/apollo_lite/recovery.img $HOME/twrp/TWRP-$version-apollo_lite-$(date +"%Y%m%d")-Unofficial-version-2.img
+  - cp $HOME/twrp/out/target/product/apollo_lite/recovery.img $HOME/twrp/TWRP-$version-apollo_lite-$(date +"%Y%m%d")-Unofficial-version-3.img
   - cd $HOME/twrp/
   # Optional: You might need to switch from https://transfer.sh to https://file.io
-  - curl -s --upload-file TWRP-$version-apollo_lite-$(date +"%Y%m%d")-Unofficial-version-2.img https://transfer.sh/ && echo ""
+  - curl -s --upload-file TWRP-$version-apollo_lite-$(date +"%Y%m%d")-Unofficial-version-3.img https://transfer.sh/ && echo ""
 deploy:
   skip_cleanup: true
   provider: releases
