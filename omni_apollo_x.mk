@@ -10,11 +10,11 @@ $(call inherit-product, vendor/omni/config/common.mk)
 # Replace $$BRAND$$ with your Brand's / Manufacturer's Value.
 #PRODUCT_COPY_FILES += device/vernee/apollo_x/prebuilt/zImage:kernel
 
-PRODUCT_DEVICE := k15tb_a
-PRODUCT_NAME := Apollo X
+PRODUCT_DEVICE := apollo_x
+PRODUCT_NAME := omni_apollo_x
 PRODUCT_BRAND := Vernee
-PRODUCT_MODEL := Apollo X 
-PRODUCT_MANUFACTURER := alps
+PRODUCT_MODEL := apollo_x 
+PRODUCT_MANUFACTURER := Vernee
 
 # Forcefully add mtp support (adb is already there)
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
