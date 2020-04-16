@@ -1,8 +1,10 @@
 LOCAL_PATH := device/vernee/apollo_lite
 
-TARGET_BOARD_PLATFORM := mt6797               # From ro.mediatek.platform, but lowercase value
+# Platform
+ARCH_ARM_HAVE_TLS_REGISTER := true
+TARGET_BOARD_PLATFORM := mt6797      
 TARGET_NO_BOOTLOADER := true
-TARGET_BOOTLOADER_BOARD_NAME := full_k15tb_a     # From ro.product.board
+TARGET_BOOTLOADER_BOARD_NAME := full_k15tb_a
 
 BOARD_USES_MTK_HARDWARE := true
 BOARD_HAS_MTK_HARDWARE := true
@@ -16,12 +18,15 @@ TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := cortex-a53
+TARGET_CPU_SMP := true
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
+TARGET_BOARD_SUFFIX := _64
+TARGET_USES_64_BIT_BINDER := true
 
 TARGET_CPU_ABI_LIST_64_BIT := $(TARGET_CPU_ABI)
 TARGET_CPU_ABI_LIST_32_BIT := $(TARGET_2ND_CPU_ABI),$(TARGET_2ND_CPU_ABI2)
@@ -42,6 +47,7 @@ BOARD_RECOVERY_SWIPE := true
 BOARD_USES_MMCUTILS := true
 BOARD_SUPPRESS_EMMC_WIPE := true
 BOARD_CHARGER_SHOW_PERCENTAGE := true
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/root/etc/recovery.fstab
 
 # TWRP stuff
 DEVICE_RESOLUTION := 1080x1920                  # The Resolution of your Device
@@ -70,17 +76,13 @@ RECOVERY_SDCARD_ON_DATA := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 
 # Kernel
-TARGET_IS_64_BIT := true                      # true/false: Determine if the device is 64-bit or not
+TARGET_IS_64_BIT := true
 TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/zImage
 TARGET_PREBUILT_RECOVERY_KERNEL := $(LOCAL_PATH)/prebuilt/zImage
-# Get the CMDLine, Base, Pagesize and offsets from Unpacked recovery image and put below
-BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
+BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x40078000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_MKBOOTIMG_ARGS := base 0x40078000 --pagesize 2048 --kernel_offset 0x00008000 --ramdisk_offset 0x04f88000 --second_offset 0x00000000 --tags_offset 0x03f88000 --board K15TB-A.C.vA01.
-
-TARGET_BOARD_SUFFIX := _64                    # Remove if the device is 32-bit
-TARGET_USES_64_BIT_BINDER := true             # Remove if the device is 32-bit
+BOARD_MKBOOTIMG_ARGS := base 0x40078000 --pagesize 2048 --kernel_offset 0x00008000 --ramdisk_offset 0x04f88000 --second_offset 0x00000000 --tags_offset 0x03f88000 --board K15TB-A.C.vA01.      
 
 # Partitions
 BOARD_SYSTEMIMAGE_PARTITION_SIZE:=2684354560
@@ -90,6 +92,10 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE:=16777216
 BOARD_BOOTIMAGE_PARTITION_SIZE:=16777216
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 131072
+
+BOARD_HAS_LARGE_FILESYSTEM := true
+TARGET_USERIMAGES_USE_EXT4 := true
+BOARD_SUPPRESS_SECURE_ERASE := true
 
 # Check whether the device is 64-bit or 32-bit, and then include the TWRPBuilder Part
 #ifeq ($(TARGET_IS_64_BIT),true)
