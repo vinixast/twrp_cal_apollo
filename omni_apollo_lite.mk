@@ -30,10 +30,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/init.recovery.mt6797.rc:root/init.recovery.mt6797.rc \
     $(LOCAL_PATH)/recovery/root/init.recovery.usb.rc:root/init.recovery.usb.rc \
     $(LOCAL_PATH)/recovery/root/init.recovery.service.rc:root/init.recovery.service.rc \
-
     #$(LOCAL_PATH)/recovery/root/meta_init.modem.rc:root/meta_init.modem.rc \
     #$(LOCAL_PATH)/recovery/root/meta_init.project.rc:root/meta_init.project.rc \
     #$(LOCAL_PATH)/recovery/root/meta_init.rc:root/meta_init.rcc \
     #$(LOCAL_PATH)/recovery/root/ueventd.mt6797.rc:root/ueventd.mt6797.rc \
-    $(LOCAL_PATH)/recovery/root/fstab.mt6797:root/fstab.mt6797
+    $(LOCAL_PATH)/recovery/root/fstab.mt6797:root/fstab.mt6797 \
     $(LOCAL_PATH)/recovery/root/ueventd.rc:root/ueventd.rc
