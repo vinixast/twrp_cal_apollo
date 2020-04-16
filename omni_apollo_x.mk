@@ -11,9 +11,9 @@ $(call inherit-product, vendor/omni/config/common.mk)
 #PRODUCT_COPY_FILES += device/vernee/apollo_x/prebuilt/zImage:kernel
 
 PRODUCT_DEVICE := k15tb_a
-PRODUCT_NAME := full_k15tb_a
-PRODUCT_BRAND := alps
-PRODUCT_MODEL := k15tb_a
+PRODUCT_NAME := Apollo X
+PRODUCT_BRAND := Vernee
+PRODUCT_MODEL := Apollo X 
 PRODUCT_MANUFACTURER := alps
 
 # Forcefully add mtp support (adb is already there)
