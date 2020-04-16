@@ -1,4 +1,4 @@
-LOCAL_PATH := device/vernee/apollo_lite
+LOCAL_PATH := device/vernee/apollo_x
 
 # Platform
 ARCH_ARM_HAVE_TLS_REGISTER := true
@@ -82,7 +82,7 @@ TARGET_IS_64_BIT := true
 TARGET_KERNEL_SOURCE := kernel/vernee/apollo_lite
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_CONFIG := k15ta_a_defconfig
+TARGET_KERNEL_CONFIG := k15tb_a_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 MTK_APPENDED_DTB_SUPPORT := yes
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
