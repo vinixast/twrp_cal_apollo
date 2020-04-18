@@ -33,7 +33,6 @@ script:
     cd /home/builder/twrp/
     source build/envsetup.sh
     # Choose build flavor as "eng" or "userdebug"
-    BUILD_FLAVOR="eng"
     lunch omni_apollo_x-eng
     make -j$(nproc --all) recoveryimage
     exit
