@@ -48,11 +48,11 @@ BOARD_USES_MMCUTILS := true
 BOARD_SUPPRESS_EMMC_WIPE := true
 BOARD_CHARGER_SHOW_PERCENTAGE := true
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/root/etc/recovery.fstab
-RECOVERY_VARIANT := twrp
+#RECOVERY_VARIANT := twrp
 
 # TWRP stuff
-TW_THEME := portrait_hdpi
-#DEVICE_RESOLUTION := 1080x1920                  # The Resolution of your Device
+#TW_THEME := portrait_hdpi
+DEVICE_RESOLUTION := 1080x1920                  # The Resolution of your Device
 TARGET_SCREEN_HEIGHT := 1920                     # The height
 TARGET_SCREEN_WIDTH := 1080  
 TW_EXCLUDE_SUPERSU := true
@@ -74,16 +74,16 @@ TW_INCLUDE_FB2PNG := true
 TW_DEFAULT_LANGUAGE := en
 TW_EXTRA_LANGUAGES := false
 
-TWRP_EVENT_LOGGING := true
-TW_NO_REBOOT_BOOTLOADER := false
+#TWRP_EVENT_LOGGING := true
+#TW_NO_REBOOT_BOOTLOADER := false
 RECOVERY_SDCARD_ON_DATA := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 
-TW_INTERNAL_STORAGE_PATH := "/data/media"
-TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
-TW_EXTERNAL_STORAGE_PATH := "/external_sd"
-TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
-TW_DEFAULT_EXTERNAL_STORAGE := true
+#TW_INTERNAL_STORAGE_PATH := "/data/media"
+#TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
+#TW_EXTERNAL_STORAGE_PATH := "/external_sd"
+#TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
+#TW_DEFAULT_EXTERNAL_STORAGE := true
 
 # Kernel
 TARGET_IS_64_BIT := true
