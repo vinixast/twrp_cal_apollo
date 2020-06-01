@@ -1,6 +1,6 @@
-LOCAL_PATH := $(call my-dir)
+ifneq ($(filter apollo_x,$(TARGET_DEVICE)),)
 
-ifeq ($(TARGET_DEVICE),apollo_x)
+LOCAL_PATH := device/vernee/apollo_x
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
