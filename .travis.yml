@@ -30,14 +30,14 @@ script:
   - rm -rf bootable/recovery && git clone https://github.com/omnirom/android_bootable_recovery -b android-9.0 --depth 1 bootable/recovery
   - |
     docker run --rm -i -e USER_ID=$(id -u) -e GROUP_ID=$(id -g) -v "$(pwd):/home/builder/twrp/:rw,z" -v "${HOME}/.ccache:/srv/ccache:rw,z" fr3akyphantom/droid-builder bash << EOF
-    cd /home/builder/twrp/
-    source build/envsetup.sh
+  - cd /home/builder/twrp/
+  - source build/envsetup.sh
     # Choose build flavor as "eng" or "userdebug"
-    BUILD_FLAVOR="eng"
-    lunch omni_apollo_x-eng
-    make -j$(nproc --all) recoveryimage
-    exit
-    EOF
+  - BUILD_FLAVOR="eng"
+  - lunch omni_apollo_x-eng
+  - make -j$(nproc --all) recoveryimage
+  - exit
+  - EOF
 after_success:
   - export version=$(cat bootable/recovery/variables.h | grep "define TW_MAIN_VERSION_STR" | cut -d '"' -f2)
   - cp $HOME/twrp/out/target/product/apollo_x/recovery.img $HOME/twrp/TWRP-$version-apollo_x-$(date +"%Y%m%d")-Unofficial-version-4.img
