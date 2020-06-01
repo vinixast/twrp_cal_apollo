@@ -1,0 +1,8 @@
+[
+	{
+		"remote": "github",
+		"repository": "vinixast/kernel_new_apollo",
+		"target_path": "kernel/vernee/apollo_x",
+		"revision": "ALPS-MP-M0.MP9-V1.78.1_NB6797_6C_M"
+	}
+]
