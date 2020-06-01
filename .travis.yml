@@ -58,6 +58,7 @@ deploy:
 branches:
   only:
     - master # Set travis builder branch(es) names
+    - working
   except:
     - /^(?i:untagged)-.*$/
     - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
